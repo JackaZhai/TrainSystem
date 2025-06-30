@@ -189,7 +189,7 @@ void LoginWindow::on_loginButton_clicked()
         return;
     }
     
-    // 临时的登录验证逻辑
+    // 登录验证逻辑
     if (username == "admin" && password == "123456") {
         QMessageBox::information(this, "登录成功", "欢迎使用川渝地区轨道交通客流数据分析展示系统！");
         
@@ -209,4 +209,4 @@ void LoginWindow::on_loginButton_clicked()
 void LoginWindow::on_registerButton_clicked()
 {
     QMessageBox::information(this, "注册功能", "注册功能正在开发中，请联系系统管理员！");
-}                                           
+}
