@@ -28,8 +28,12 @@ private slots:
 private:
     void setupStyles();
     void loadImage();
+    void showRegisterDialog();
     
     Ui::LoginWindow *ui;
+    
+    // 用户数据文件路径（绝对路径）
+    static const QString USER_DATA_PATH;
 };
 
 #endif // LOGINWINDOW_H 

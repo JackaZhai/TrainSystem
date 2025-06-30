@@ -28,6 +28,18 @@ public:
     // Static method to load stations from CSV file
     static QVector<Station> loadFromCSV(const QString &filePath);
     
+    // 站点管理功能
+    static bool addStation(QVector<Station> &stations, const Station &station, const QString &filePath);
+    static bool deleteStation(QVector<Station> &stations, int zdid, const QString &filePath);
+    static bool updateStation(QVector<Station> &stations, const Station &updatedStation, const QString &filePath);
+    static QVector<Station> filterStations(const QVector<Station> &stations, const QString &searchText);
+    static bool saveToCSV(const QVector<Station> &stations, const QString &filePath);
+    static int getNextAvailableId(const QVector<Station> &stations);
+    static Station* findStationById(QVector<Station> &stations, int zdid);
+    
+    // 川渝双向流量分析
+    static QString getDirection(int fromStationId, int toStationId);
+    
 private:
     int zdid;                   // 站点id
     QString zdmc;               // 站点名称

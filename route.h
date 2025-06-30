@@ -40,6 +40,17 @@ public:
     // Static method to load routes from CSV file
     static QVector<Route> loadFromCSV(const QString &filePath);
     
+    // 运营线路管理功能
+    static bool addLine(QVector<Route> &routes, const Route &route, const QString &filePath);
+    static bool deleteLine(QVector<Route> &routes, int yyxlbm, const QString &filePath);
+    static bool updateLine(QVector<Route> &routes, const Route &updatedRoute, const QString &filePath);
+    static QVector<Route> filterRoutes(const QVector<Route> &routes, const QString &searchText);
+    static QVector<Route> getRoutesByLineCode(const QVector<Route> &routes, int yyxlbm);
+    static bool saveToCSV(const QVector<Route> &routes, const QString &filePath);
+    static int getNextAvailableLineId(const QVector<Route> &routes);
+    static bool hasTrainData(int yyxlbm); // 检查是否有关联的列车数据
+    static QVector<Route> getLineStations(const QVector<Route> &routes, int yyxlbm);
+    
 private:
     int yyxlbm;         // 运营线路编码
     int zdid;           // 站点id
